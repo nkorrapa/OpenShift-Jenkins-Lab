@@ -1,8 +1,8 @@
 def appName = "birthday-paradox"
 def replicas = "1"
-def devProject = nkorrapa-dev
-def testProject = nkorrapa-test
-def prodProject = nkorrapa-prod
+def devProject = "nkorrapa-dev"
+def testProject = "nkorrapa-test"
+def prodProject = "nkorrapa-prod"
 
 def skopeoToken
 def imageTag
@@ -44,8 +44,8 @@ pipeline {
         }
         stage("Build & Test") {
             steps {
-               //Maven 
-                sh "mvn clean package" 
+               //Maven
+                sh "mvn clean package"
             }
         }
         stage("Create Image") {
